@@ -8,7 +8,7 @@ document.getElementById("btn-login").addEventListener("click", function (event) 
 
     if(accountNumber.length === 11){
         if(convertedPin === 1234){
-            window.location.href = './main.html'
+            window.location.href = './index.html'
         }
         else{
             alert('Your Pin is not correct')
