@@ -1,387 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo App</title>
+
     <!-- daisy cdn  -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-slate-800">
+</head>
+<body class="bg-slate-800">
     <section class="max-w-md min-h-screen mx-auto bg-gray-200">
-      <header>
-        <!-- nav section  -->
-        <nav class="flex justify-between items-center p-5">
-          <img src="./assets/Group.png" alt="" />
-          <div>
-            <h1 class="text-2xl font-bold">
-              $ <span id="balance">45000</span>
-            </h1>
-            <p>Available Balance</p>
-          </div>
-          <div>
-            <button class="btn btn-primary">Logout</button>
-          </div>
-        </nav>
-      </header>
-      <main class="p-4">
-        <section>
-          <h2 class="text-2xl font-bold">🔥 Welcome to Payooo!</h2>
-          <p class="my-3">
-            Enjoy easy and converient financial services with us <br />
-            Cashout Charge is low Today!
-          </p>
-          <!--All transection card section  -->
-          <div class="grid grid-cols-3 gap-3">
-            <!-- add money section  -->
-            <div
-              id="add-money-box"
-              class="border border-black p-4 rounded-lg text-center cursor-pointer"
-            >
-              <img class="w-10 mx-auto" src="./assets/wallet1.png" alt="" />
-              <h4>Add Money</h4>
-            </div>
+        <div class="flex flex-col justify-center items-center">
+            <img class="w-64 mt-12" src="./assets/bg.png" alt="">
+            <img class="w-24 -mt-44" src="./assets/Group.png" alt="">
+        </div>
 
-            <!-- cashout section  -->
-            <div
-              id="cashout-box"
-              class="border border-black p-4 rounded-lg text-center cursor-pointer"
-            >
-              <img class="w-10 mx-auto" src="./assets/send1.png" alt="" />
-              <h4>Cashout</h4>
-            </div>
-
-            <!-- transfer section  -->
-            <div id="transfer-box" class="border border-black p-4 rounded-lg text-center cursor-pointer">
-              <img class="w-10 mx-auto" src="./assets/money1.png" alt="" />
-              <h4>Transfer</h4>
-            </div>
-
-            <!-- Get Bonus Section  -->
-            <div id="bonus-box" class="border border-black p-4 rounded-lg text-center cursor-pointer">
-              <img class="w-10 mx-auto" src="./assets/bonus1.png" alt="" />
-              <h4>Get Bonus</h4>
-            </div>
-
-            <!-- Pay Bill Section  -->
-            <div id="pay-bill-box" class="border border-black p-4 rounded-lg text-center cursor-pointer">
-              <img class="w-10 mx-auto" src="./assets/purse1.png" alt="" />
-              <h4>Pay Bill</h4>
-            </div>
-
-            <!-- Transection section  -->
-            <div id="transection-box" class="border border-black p-4 rounded-lg text-center cursor-pointer">
-              <img
-                class="w-10 mx-auto"
-                src="./assets/transaction1.png"
-                alt=""
-              />
-              <h4>Transection</h4>
-            </div>
-          </div>
-        </section>
-
-        <!-- Add money section  -->
-        <section id="add-money-container">
-          <h2 class="text-xl text-blue-700 my-3">Add Money</h2>
-          <div class="bg-slate-100 rounded-lg">
-            <div class="hero-content flex-col lg:flex-row-reverse">
-              <div class="w-full">
-                <form class="">
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold"> Select Bank Account</span>
-                    </label>
-                    <select name="" id="" class="select select-bordered">
-                      <option value="bkash">bkash</option>
-                      <option value="bkash">Nagat</option>
-                      <option value="bkash">Rocket</option>
-                    </select>
+        <div>
+            <div class="">
+                <div class="hero-content flex-col lg:flex-row-reverse mt-4">
+                 
+                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="font-bold">Account Number</span>
+                        </label>
+                        <input id="account-number"  value="01751202502" type="number" placeholder="Type your number" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="font-bold">Pin</span>
+                        </label>
+                        <input id="pin" value="1234" type="password" placeholder="Type your Pin" class="input input-bordered" required />
+                        <label class="label">
+                        </label>
+                      </div>
+                      <div class="form-control mt-6">
+                        <button id="btn-login" class="btn btn-primary">Login</button>
+                      </div>
+                    </form>
                   </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold"> Bank Account Number</span>
-                    </label>
-                    <input
-                      id="bank-account-number"
-                      value="01751202502"
-                      type="number"
-                      placeholder="Type your number"
-                      class="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold">Amount to Add</span>
-                    </label>
-                    <input
-                      id="add-amount"
-                      value=""
-                      type="text"
-                      placeholder="Type your Amount"
-                      class="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold">Pin</span>
-                    </label>
-                    <input
-                      id="pin"
-                      value="1234"
-                      type="password"
-                      placeholder="Type your Pin"
-                      class="input input-bordered"
-                      required
-                    />
-                    <label class="label"> </label>
-                  </div>
-                  <div class="form-control">
-                    <button id="btn-add-money" class="btn btn-primary">
-                      Add Money
-                    </button>
-                  </div>
-                </form>
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- cashout section  -->
-        <section id="cashout-container">
-          <h2 class="text-xl text-blue-700 my-3">Cashout</h2>
-          <div class="bg-slate-100 rounded-lg">
-            <div class="hero-content flex-col lg:flex-row-reverse">
-              <div class="w-full">
-                <form class="">
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold"> Agent Number</span>
-                    </label>
-                    <input
-                      id="agent-number"
-                      value="01751202502"
-                      type="number"
-                      placeholder="11 Digit Number"
-                      class="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold">Amount</span>
-                    </label>
-                    <input
-                      id="amount"
-                      value=""
-                      type="text"
-                      placeholder="Amount to Withdraw"
-                      class="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold">Pin</span>
-                    </label>
-                    <input
-                      id="cashout-pin"
-                      value="1234"
-                      type="password"
-                      placeholder="4 Digit Pin"
-                      class="input input-bordered"
-                      required
-                    />
-                    <label class="label"> </label>
-                  </div>
-                  <div class="form-control">
-                    <button id="btn-withdraw" class="btn btn-primary">
-                      WithDraw
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-       
-        <!-- Transfer section  -->
-        <section id="transfer-container">
-          <h2 class="text-xl text-blue-700 my-3">Transfer Money</h2>
-          <div class="bg-slate-100 rounded-lg">
-            <div class="hero-content flex-col lg:flex-row-reverse">
-              <div class="w-full">
-                <form class="">
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold"> Recipient Number</span>
-                    </label>
-                    <input
-                      id="recipient-number"
-                      value=""
-                      type="number"
-                      placeholder="11 Digit Number"
-                      class="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold">Amount</span>
-                    </label>
-                    <input
-                      id="recipient-amount"
-                      value=""
-                      type="text"
-                      placeholder="Amount to Transfer"
-                      class="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold">Pin</span>
-                    </label>
-                    <input
-                      id="recipient-pin"
-                      value=""
-                      type="password"
-                      placeholder="4 Digit Pin"
-                      class="input input-bordered"
-                      required
-                    />
-                    <label class="label"> </label>
-                  </div>
-                  <div class="form-control">
-                    <button id="btn-transfer-money" class="btn btn-primary">
-                      Transfer Money
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Get Bonus section  -->
-        <section id="bonus-container">
-          <h2 class="text-xl text-blue-700 my-3">Get Bonus</h2>
-          <div class="bg-slate-100 rounded-lg">
-            <div class="hero-content flex-col lg:flex-row-reverse">
-              <div class="w-full">
-                <form class="">
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold"> Coupon Number</span>
-                    </label>
-                    <input
-                      id="coupon-number"
-                      value=""
-                      type="text"
-                      placeholder="Write Your Coupon Number"
-                      class="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <br>
-                  <div class="form-control">
-                    <button id="btn-bonus" class="btn btn-primary">
-                      Get Bonus
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-
-         <!-- Pay Bill section  -->
-         <section id="pay-bill-container">
-          <h2 class="text-xl text-blue-700 my-3">Pay Bill</h2>
-          <div class="bg-slate-100 rounded-lg">
-            <div class="hero-content flex-col lg:flex-row-reverse">
-              <div class="w-full">
-                <form class="">
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold"> Select Account</span>
-                    </label>
-                    <select name="" id="" class="select select-bordered">
-                      <option value="Electricity">Electricity</option>
-                      <option value="Water">Water</option>
-                      <option value="Education">Education</option>
-                      <option value="Internet">Internet</option>
-                      <option value="Telephone">Telephone</option>
-                      <option value="Gas">Gas</option>
-                    </select>
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold"> Account Number</span>
-                    </label>
-                    <input
-                      id="pay-bill-number"
-                      value=""
-                      type="number"
-                      placeholder="Type your number"
-                      class="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold">Amount to Pay</span>
-                    </label>
-                    <input
-                      id="amount-to-pay"
-                      value=""
-                      type="text"
-                      placeholder="Type your Amount"
-                      class="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="font-bold">Pin</span>
-                    </label>
-                    <input
-                      id="pay-pin"
-                      value="1234"
-                      type="password"
-                      placeholder="Type your Pin"
-                      class="input input-bordered"
-                      required
-                    />
-                    <label class="label"> </label>
-                  </div>
-                  <div class="form-control">
-                    <button id="btn-pay-bill" class="btn btn-primary">
-                      Pay Bill
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- transection section  -->
-         <section id="transection-section">
-          <h2 class="text-xl text-blue-700 my-3">Transection History</h2>
-          <div class="" id="transection-container">
-
-          </div>
-         </section>
-      </main>
+        </div>
     </section>
-    <script src="./main.js"></script>
-  </body>
+
+    <script src="./login.js"></script>
+</body>
 </html>
