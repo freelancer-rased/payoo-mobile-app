@@ -24,14 +24,14 @@
     </header>
     <main class="p-4">
         <section>
-            <h2 class="text-2xl font-bold">Welcome to Payooo!</h2>
+            <h2 class="text-2xl font-bold">🔥 Welcome to Payooo!</h2>
             <p class="my-3">Enjoy easy and converient financial services with us <br> Cashout Charge is low Today!</p>
            <div class="grid grid-cols-3 gap-3">
-            <div class="border border-black p-4 rounded-lg text-center">
+            <div id="add-money-box" class="border border-black p-4 rounded-lg text-center cursor-pointer">
                 <img class="w-10 mx-auto" src="./assets/wallet1.png" alt="">
                 <h4>Add Money</h4>
             </div>
-            <div class="border border-black p-4 rounded-lg text-center">
+            <div id="cashout-box" class="border border-black p-4 rounded-lg text-center cursor-pointer">
                 <img class="w-10 mx-auto" src="./assets/send1.png" alt="">
                 <h4>Cashout</h4>
             </div>
@@ -54,7 +54,7 @@
            </div>
         </section>
 
-        <section>
+        <section id="add-money-container">
             <h2 class="text-xl text-blue-700 my-3">Add Money</h2>
             <div class=" bg-slate-100 rounded-lg">
                 <div class="hero-content flex-col lg:flex-row-reverse">
@@ -96,6 +96,42 @@
                       </div>
                       <div class="form-control">
                         <button id="btn-add-money" class="btn btn-primary">Add Money</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section id="cashout-container">
+            <h2 class="text-xl text-blue-700 my-3">Cashout</h2>
+            <div class=" bg-slate-100 rounded-lg">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                 
+                  <div class=" w-full">
+                    <form class="">
+                     <div class="form-control">
+                        <label class="label">
+                          <span class="font-bold"> Agent Number</span>
+                        </label>
+                        <input id="agent-number"  value="01751202502" type="number" placeholder="11 Digit Number" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="font-bold">Amount</span>
+                        </label>
+                        <input id="amount" value="" type="text" placeholder="Amount to Withdraw" class="input input-bordered" required />
+                        
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="font-bold">Pin</span>
+                        </label>
+                        <input id="cashout-pin" value="1234" type="password" placeholder="4 Digit Pin" class="input input-bordered" required />
+                        <label class="label">
+                        </label>
+                      </div>
+                      <div class="form-control">
+                        <button id="btn-withdraw" class="btn btn-primary">WithDraw</button>
                       </div>
                     </form>
                   </div>
